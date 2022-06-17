@@ -37,16 +37,24 @@ void push(stack_t **stack, unsigned int line_number)
 		top->next = NULL;
 		return;
 	}
-	
 	top->next = (*stack);
 	(*stack)->prev = top;
 	*stack = top;
 }
 
-void pall(stack_t **stack, unsigned int line)
+
+/**
+ * pall - function that prints all the values in the stack, starting from
+ * the top of the stack
+ * @stack: pointer to the top of the stack
+ * @line_number: unused
+ *
+ * Return: void
+ */
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head;
-	(void) line;
+	(void) line_number;
 	head = *stack;
 	while (head != NULL)
 	{
