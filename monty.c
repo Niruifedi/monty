@@ -1,5 +1,6 @@
 #include "monty.h"
 
+global_vars_t glob_var;
 /**
  * main - man function
  * @argc: argument count
@@ -8,8 +9,6 @@
  */
 int main(int argc, char **argv)
 {
-	global_vars_t glob_var;
-
 	/* initializes stack */
 	stack_t *head;
 
