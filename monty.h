@@ -47,6 +47,9 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line);
+void swap(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void parse(char *fileName, stack_t **head);
 int _isdigit(char *str);
 void free_dataStructure(void);

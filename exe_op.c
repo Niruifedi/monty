@@ -14,6 +14,9 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 	instruction_t all_ops[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 

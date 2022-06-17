@@ -62,3 +62,78 @@ void pall(stack_t **stack, unsigned int line_number)
 		head = head->next;
 	}
 }
+
+/**
+ * do_pint - function that prints the first element of the stack
+ * @stack: pointer to the top of the stack
+ * @line_number: error line number
+ *
+ * Return: void
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *head = *stack;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", head->n);
+}
+
+
+/**
+ * do_pop - function that removes the first element of the stack
+ * @stack: pointer to the top of the stack
+ * @line_number: error line number
+ *
+ * Return: void
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	temp->prev = NULL;
+
+	free(temp);
+}
+
+
+/**
+ * do_swap - function that swaps the first two elements of the stack
+ * @stack: pointer to the top of the stack
+ * @line_number: error line number
+ *
+ * Return: void
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	int temp1, temp2;
+
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n",
+			line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp1 = (*stack)->n;
+	temp2 = (*stack)->next->n;
+
+	(*stack)->n = temp2;
+	(*stack)->next->n = temp1;
+
+}
+
