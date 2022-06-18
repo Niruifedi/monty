@@ -73,7 +73,7 @@ void do_div(stack_t **stack, unsigned int line_number)
 	a = (*stack)->n;
 	b = (*stack)->next->n;
 	
-	if ( == 0)
+	if (a == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n",
 				line_number);
