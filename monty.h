@@ -52,6 +52,7 @@ void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void parse(char *fileName, stack_t **head);
+void nop(stack_t **stack, unsigned int line_number);
 int _isdigit(char *str);
 void free_dataStructure(void);
 void free_fp_line(void);
