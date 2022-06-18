@@ -72,14 +72,15 @@ void do_div(stack_t **stack, unsigned int line_number)
 	}
 	a = (*stack)->n;
 	b = (*stack)->next->n;
-	divide = b / a;
-	pop(stack, line_number);
-	(*stack)->n = divide;
 	
-	if ((*stack)->n == 0)
+	if ( == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n",
 				line_number);
 		exit(EXIT_FAILURE);
 	}
+	divide = b / a;
+
+	pop(stack, line_number);
+	(*stack)->n = divide;
 }
