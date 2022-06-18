@@ -19,6 +19,7 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
