@@ -20,6 +20,7 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", do_div},
 		{NULL, NULL}
 	};
 
