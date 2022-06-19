@@ -109,3 +109,35 @@ void _mul(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 	(*stack)->n = multiple;
 }
+
+
+/**
+ * _mod - computes the rest of th division of the second top element
+ * of the stack by the top element of the stack
+ * @stack: pointer to top stack
+ * @line_number: error line number
+ * Return: void
+ */
+void _mod(stack_t **stack, unsigned int line_number)
+{
+	int a, b, modulo;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n",
+				line_number);
+		exit(EXIT_FAILURE);
+	}
+	a = (*stack)->n;
+	b = (*stack)->next->n;
+
+	if (a == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n",
+				line_number);
+		exit(EXIT_FAILURE);
+	}
+	modulo = b % a;
+	pop(stack, line_number);
+	(*stack)->n = modulo;
+}
