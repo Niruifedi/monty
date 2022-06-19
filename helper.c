@@ -23,3 +23,23 @@ int _isdigit(char *str)
 
 	return (1);
 }
+
+/**
+ * dropnl - function that removes the newline at the end of a string
+ * @src: source string
+ *
+ * Return: void
+ */
+void dropnl(char *src)
+{
+	int i;
+
+	for (i = 0; src[i]; i++)
+	{
+		if (src[i] == '\n')
+		{
+			*(src + i) = '\0';
+			return;
+		}
+	}
+}

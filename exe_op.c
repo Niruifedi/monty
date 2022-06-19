@@ -23,6 +23,10 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 		{"div", do_div},
 		{"mul", _mul},
 		{"mod", _mod},
+		{"pchar", _pchar},
+		{"rotl", _rotl},
+		{"rotr", _rotr},
+		{"pstr", _pstr},
 		{NULL, NULL}
 	};
 
