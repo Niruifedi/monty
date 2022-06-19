@@ -84,3 +84,28 @@ void do_div(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 	(*stack)->n = divide;
 }
+
+
+/**
+ * _mul - multiplies the second top element of stack with
+ * the top element of stack
+ * @stack: pointer to top stack
+ * @line_number: error line number
+ * Return: void
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	int a, b, multiple;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n",
+				line_number);
+		exit(EXIT_FAILURE);
+	}
+	a = (*stack)->n;
+	b = (*stack)->next->n;
+	multiple = b * a;
+	pop(stack, line_number);
+	(*stack)->n = multiple;
+}

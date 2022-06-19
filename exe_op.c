@@ -21,6 +21,7 @@ void exe_operation(char *op_command, stack_t **head, unsigned int line_number)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", do_div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
